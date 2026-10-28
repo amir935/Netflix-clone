@@ -1,0 +1,62 @@
+.netflix-footer {
+  background-color: #000;
+  color: #b3b3b3;
+  padding: 50px 5%;
+  font-family: Arial, sans-serif;
+}
+
+.netflix-footer a {
+  color: #b3b3b3;
+  text-decoration: underline;
+}
+
+.footer-contact {
+  margin: 0 0 55px;
+  font-size: 18px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-language-label {
+  display: block;
+  margin-top: 60px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-language {
+  background-color: #111;
+  color: #fff;
+  border: 1px solid #777;
+  border-radius: 4px;
+  padding: 9px 16px;
+  font-size: 16px;
+}
+
+.footer-note {
+  margin-top: 50px;
+  font-size: 14px;
+  color: #888;
+}
+
+@media (max-width: 700px) {
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+}

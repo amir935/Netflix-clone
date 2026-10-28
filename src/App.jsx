@@ -1,7 +1,11 @@
 
 import './App.css'
 import Header from "./Components/Header/Header.jsx"
+
 import Banner from "./Components/Banner/Banner.jsx"
+
+import Footer from "./Components/Footer/Footer.jsx"
+
 
 function App() {
 
@@ -9,7 +13,11 @@ function App() {
   return (
     <>
       <Header />
+
       <Banner />
+
+      <Footer />
+
     </>
   )
 }

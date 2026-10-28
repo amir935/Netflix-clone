@@ -3,6 +3,7 @@ import logo from "../../assets/image/logo.png";
 import { Link } from "react-router-dom";
 import { Search, Bell, User, ChevronDown } from "lucide-react";
 import styles from "./Header.module.css";
+
 function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);

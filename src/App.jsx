@@ -6,6 +6,8 @@ import Banner from "./Components/Banner/Banner.jsx"
 
 import Footer from "./Components/Footer/Footer.jsx"
 
+import DisplayRow from "./Components/DisplayRow/DisplayRow.jsx"
+
 
 function App() {
 
@@ -13,13 +15,11 @@ function App() {
   return (
     <>
       <Header />
-
       <Banner />
-
+      <DisplayRow />
       <Footer />
-
     </>
-  )
+  );
 }
 
 export default App

@@ -3,10 +3,10 @@ import styles from "./MovieCard.module.css";
 import { FaCirclePlay } from "react-icons/fa6";
 import { BsPlusCircle } from "react-icons/bs";
 import { GoCheckCircleFill } from "react-icons/go";
+// import { IoArrowDropdownCircle } from "react-icons/io";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
 
-
-
+const IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
 function MovieCard({ movie }) {
   console.log(movie);
@@ -16,7 +16,7 @@ function MovieCard({ movie }) {
       {/* poster img */}
       <img
         className={styles.poster}
-        src={movie?.poster_path}
+        src={`${IMAGE_BASE}${movie?.poster_path}`}
         alt="poster image"
       />
 
@@ -25,7 +25,7 @@ function MovieCard({ movie }) {
         {/* img */}
         <img
           className={styles.hoverImage}
-          src={movie?.poster_path}
+          src={`${IMAGE_BASE}${movie?.poster_path}`}
           alt="hover image"
         />
 

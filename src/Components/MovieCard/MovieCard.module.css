@@ -1,11 +1,15 @@
-.cardWrapper{
-    position: relative;
-    width: 290px;
-    height: 198px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    overflow: visible;
-    z-index:1;
+.cardWrapper {
+  position: relative;
+  width: 290px;
+  height: 198px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: visible;
+  z-index: 1;
+}
+
+.cardWrapper:hover {
+  z-index: 20;
 }
 
 .poster{
@@ -18,55 +22,57 @@
     z-index: 2;
 }
 
-.hoverCard{
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.95);
-    width: 320px;
-    min-height: 305px;
-    height: auto;
-    background: #111;
-    border-radius: 8px;
-    overflow: visible;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
 
-    /* hidden by default */
-    opacity: 0;
-    visibility: hidden;
-    transition: 
+
+
+.hoverCard {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+
+  width: 320px;
+  min-height: 305px;
+
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
     opacity 0.3s ease,
     visibility 0.3s ease,
     transform 0.3s ease;
 
-    /* Optimize the performance */
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-    pointer-events: none;
-    z-index: 999999;
+  z-index: 999999;
 }
 
-.cardWrapper:hover .hoverCard{
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) scale(1);
-    pointer-events: auto;
-}
-.hoverImage{
-    width: 100px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-
+.cardWrapper:hover .hoverCard {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
 }
 
 
-.hoverCard:hover{
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    pointer-events: auto;
+
+
+.hoverImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 8px 8px 0 0;
 }
+
+
+
 
 .badge{
     background: red;

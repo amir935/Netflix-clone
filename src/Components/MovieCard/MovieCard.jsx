@@ -5,12 +5,28 @@ import { BsPlusCircle } from "react-icons/bs";
 import { GoCheckCircleFill } from "react-icons/go";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
 
+function isRecentlyAdded(movie) {
 
+
+
+  const dateStr = movie?.release_date || movie?.first_air_date
+  if (!dateStr) return false
+
+  const released = new Date(dateStr)
+  const now = new Date()
+  const diffDays = (now - released) / (1000 * 60 * 60 * 24)
+
+
+  return diffDays >= 0 && diffDays <= RECENT_DAYS
+}
 
 
 function MovieCard({ movie }) {
   console.log(movie);
-  let genres = ["Adventure", "Action", "Thriller"];
+  let genres = ['Adventure', 'Action', 'Thriller']
+
+
+  const isRecent = isRecentlyAdded(movie)
   return (
     <div className={styles.cardWrapper}>
       {/* poster img */}
@@ -30,7 +46,7 @@ function MovieCard({ movie }) {
         />
 
         {/* badge inside movie */}
-        <div className={styles.badge}>Recently added</div>
+        {isRecent && <div className={styles.badge}>Recently added</div>}
         {/* buttons row*/}
         <div className={styles.buttonRow}>
           <FaCirclePlay

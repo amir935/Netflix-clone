@@ -1,142 +1,115 @@
-.cardWrapper{
-    position: relative;
-    width: 290px;
-    height: 198px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    overflow: visible;
-    z-index:1;
+.cardWrapper {
+  position: relative;
+  width: 76%; /* leaves the gap between cards */
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
-.poster{
-    width:227px;
-    height:128px;
-    border-radius: 6px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 2;
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
 }
 
-.hoverCard{
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%) scale(0.95);
-    width: 320px;
-    min-height: 305px;
-    height: auto;
-    background: #111;
-    border-radius: 8px;
-    overflow: visible;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
-
-    /* hidden by default */
-    opacity: 0;
-    visibility: hidden;
-    transition: 
-    opacity 0.3s ease,
-    visibility 0.3s ease,
-    transform 0.3s ease;
-
-    /* Optimize the performance */
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-    pointer-events: none;
-    z-index: 999999;
+/* bigger than the poster, grows up, down and sideways */
+.hoverCard {
+  position: absolute;
+  top: -26%;
+  left: -20%;
+  width: 141%;
+  background-color: #181818;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  color: white;
+  padding-bottom: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  /* z-index: 0; */
 }
 
-.cardWrapper:hover .hoverCard{
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) scale(1);
-    pointer-events: auto;
-}
-.hoverImage{
-    width: 100px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-
+.cardWrapper:hover .hoverCard {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  height: 500px;
 }
 
-
-.hoverCard:hover{
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-    pointer-events: auto;
+.hoverImage {
+  width: 100%;
+  height: 138px;
+  object-fit: cover;
+  display: block;
 }
 
-.badge{
-    background: red;
-    color: white;
-    font-size: 12px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    display: inline-block;
-    margin: 10px 0 0 12px;
-    font-weight: 500;
-
+/* badge sits under the image, not on top of it */
+.badge {
+  display: inline-block;
+  margin: 12px 0 0 14px;
+  background: #e50914;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 2px;
 }
 
-.buttonRow{
-    display: flex;
-    gap: 8px;
-    margin: 12px;
-    align-items: center;
+.buttonRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px 0;
 }
 
-.circleButton:hover{
-    transform: scale(1.05);
+.circleButton {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 
-.metaRow{
-    color: white;
-    display: flex;
-    gap: 10px;
-    margin: 8px 12px;
-    font-size: 14px;
-    font-weight: 500;
+.circleButtonSmall {
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  cursor: pointer;
 }
 
-.circleButtonSmall{
-    border-radius: 50%;
-    /* background: rgba(34, 34, 34, 0.8);
-    border: 1px solid #555; */
-    background: white;
-    border: none;
-    /* color: white; */
-    color: #111 !important;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    transition: 
-    background 0.2s ease,
-    border-color 0.2s ease;
-
+.metaRow {
+  display: flex;
+  gap: 10px;
+  padding: 10px 14px 0;
+  padding-bottom: 30px;
+  font-size: 14px;
 }
 
-
-.circleButtonSmall:hover{
-    background: #333;
-    background-color: #777;
-}
-
-.dot {
-    color: #888;
-    margin: 0 4px;
+.tag {
+  font-size: 14px;
 }
 
 .genres {
-    color: #bbb;
-    font-size: 13px;
-    margin: 6px 12px 12px 12px;
-    line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 13px;
+  color: #bcbcbc;
+  padding: 8px 14px 0;
 }
 
-.tag{
-    color: #ddd;
+.dot {
+  margin: 0 6px;
+}
+
+@media (hover: none), (max-width: 768px) {
+  .hoverCard {
+    display: none;
+  }
+  .cardWrapper {
+    width: 100%;
+  }
 }

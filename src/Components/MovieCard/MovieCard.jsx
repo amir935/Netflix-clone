@@ -3,22 +3,10 @@ import styles from "./MovieCard.module.css";
 import { FaCirclePlay } from "react-icons/fa6";
 import { BsPlusCircle } from "react-icons/bs";
 import { GoCheckCircleFill } from "react-icons/go";
+// import { IoArrowDropdownCircle } from "react-icons/io";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
 
-function isRecentlyAdded(movie) {
 
-
-
-  const dateStr = movie?.release_date || movie?.first_air_date
-  if (!dateStr) return false
-
-  const released = new Date(dateStr)
-  const now = new Date()
-  const diffDays = (now - released) / (1000 * 60 * 60 * 24)
-
-
-  return diffDays >= 0 && diffDays <= RECENT_DAYS
-}
 
 
 function MovieCard({ movie }) {
@@ -32,7 +20,7 @@ function MovieCard({ movie }) {
       {/* poster img */}
       <img
         className={styles.poster}
-        src={movie?.poster_path}
+        src={`${IMAGE_BASE}${movie?.poster_path}`}
         alt="poster image"
       />
 
@@ -41,7 +29,7 @@ function MovieCard({ movie }) {
         {/* img */}
         <img
           className={styles.hoverImage}
-          src={movie?.poster_path}
+          src={`${IMAGE_BASE}${movie?.poster_path}`}
           alt="hover image"
         />
 

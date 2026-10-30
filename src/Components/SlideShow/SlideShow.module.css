@@ -2,25 +2,30 @@
   color: white;
 }
 
-/* Make wrapper stable */
 .Row {
   position: relative;
 }
 
-/* Swiper container */
-.Row :global(.swiper) {
-  height: 265px;
-  padding: 0 50px; 
+.Row:hover {
+  z-index: 5;
 }
 
-/* Slides */
+.Row :global(.swiper) {
+  height: 265px;
+  padding: 0 50px;
+}
+
 .Row :global(.swiper-slide) {
   display: flex;
   align-items: center;
-  height: 100%; /* remove 130% */
+  height: 100%;
+  width: auto;
 }
 
-/* Navigation buttons base style */
+.Row :global(.swiper-slide):hover {
+  z-index: 10;
+}
+
 .Row :global(.swiper-button-prev),
 .Row :global(.swiper-button-next) {
   background: transparent !important;
@@ -29,18 +34,35 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
   top: 50%;
+  margin-top: 0 !important;
   transform: translateY(-50%);
 }
 
-/* Smaller arrow icon */
 .Row :global(.swiper-button-prev::after),
 .Row :global(.swiper-button-next::after) {
   font-size: 14px !important;
 }
 
-/* Show on hover */
 .Row:hover :global(.swiper-button-prev),
 .Row:hover :global(.swiper-button-next) {
   opacity: 1;
   pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .Row :global(.swiper) {
+    height: auto;
+    padding: 0 12px;
+  }
+  .title {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+}
+
+@media (hover: none) {
+  .Row :global(.swiper-button-prev),
+  .Row :global(.swiper-button-next) {
+    display: none;
+  }
 }

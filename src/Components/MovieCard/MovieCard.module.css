@@ -25,7 +25,7 @@
   min-height: 305px;
   height: auto;
   background: #111;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: visible;
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.8);
 
@@ -121,11 +121,40 @@
   margin: 0 6px;
 }
 
+@media (max-width: 1024px) {
+  .cardWrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 290 / 198;
+  }
+  .hoverCard {
+    width: 115%;
+    min-height: auto;
+  }
+  .hoverImage {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .circleButton,
+  .circleButtonSmall {
+    width: 30px;
+    height: 30px;
+  }
+  .metaRow {
+    padding-bottom: 10px;
+    font-size: 12px;
+  }
+  .tag {
+    font-size: 12px;
+  }
+  .genres {
+    font-size: 11px;
+    padding-bottom: 12px;
+  }
+}
+
 @media (hover: none), (max-width: 768px) {
   .hoverCard {
     display: none;
-  }
-  .cardWrapper {
-    width: 100%;
   }
 }

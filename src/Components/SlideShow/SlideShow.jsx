@@ -7,29 +7,41 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
 
-function SlideShow({title,movies}) {
+
+const wideBreakpoints = {};
+for (let w = 2000; w <= 6000; w += 200) {
+  wideBreakpoints[w] = { slidesPerView: +((w - 100) / 300).toFixed(1), spaceBetween: 10 };
+}
+
+function SlideShow({ title, movies }) {
   console.log(movies);
   return (
     <div>
-    <h2 className={styles.title}>{title}</h2>
-    <div className={styles.Row}>
+      <h2 className={styles.title}>{title}</h2>
+      <div className={styles.Row}>
         <Swiper
-            modules={[Navigation]}
-            navigation
-            spaceBetween= {10}
-            slidesPerView= {5.8}
-            > 
-            {movies?.map((movie)=>(
-                <SwiperSlide key={movie.id}>
-                <MovieCard movie={movie}/>
+          modules={[Navigation]}
+          navigation
+          spaceBetween={25}
+          slidesPerView={3.3} // phones: smaller cards, more per row
+          breakpoints={{
+            0: { slidesPerView: 2, spaceBetween: 8 },
+            768: { slidesPerView: 4, spaceBetween: 10 },
+            1280: { slidesPerView: 6, spaceBetween: 10 },
+            1920: { slidesPerView: 8, spaceBetween: 12 },
+          }}
+        >
+          {movies?.map((movie) => (
+            <SwiperSlide key={movie.id}>
+              <MovieCard movie={movie} />
 
-                </SwiperSlide>
+            </SwiperSlide>
 
-            ))}
+          ))}
 
 
         </Swiper>
-    </div>
+      </div>
     </div>
   );
 }

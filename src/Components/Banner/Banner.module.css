@@ -76,3 +76,57 @@
     );
     width: 100%;
 }
+
+/* ---------- Responsive: only affects screens 1024px and below ---------- */
+
+/* tablets */
+@media (max-width: 1024px) {
+    .contents {
+        padding: 220px 24px 0;
+    }
+    .logoImg {
+        width: 120px;
+    }
+    .title {
+        font-size: 2.4rem;
+    }
+    .description {
+        font-size: 18px;
+        height: auto; /* let the text decide the height so it isn't cut off */
+        margin-bottom: 1rem;
+    }
+    .fadeBottom {
+        height: 8rem;
+    }
+}
+
+/* phones */
+@media (max-width: 600px) {
+    .contents {
+        padding: 140px 16px 0;
+    }
+    .logoImg {
+        width: 90px;
+    }
+    .title {
+        font-size: 1.6rem;
+    }
+    .description {
+        font-size: 14px;
+    }
+    .buttonContainer {
+        gap: 0.75rem;
+    }
+    .button {
+        padding: 0.5rem 1rem;
+        margin-right: 0;
+        font-size: 14px;
+    }
+    .button svg {
+        width: 18px;
+        height: 18px;
+    }
+    .fadeBottom {
+        height: 5rem;
+    }
+}

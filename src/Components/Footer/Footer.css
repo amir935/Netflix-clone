@@ -49,6 +49,10 @@
   color: #888;
 }
 
+select {
+  cursor: pointer;
+}
+
 @media (max-width: 700px) {
   .footer-links {
     grid-template-columns: repeat(2, 1fr);

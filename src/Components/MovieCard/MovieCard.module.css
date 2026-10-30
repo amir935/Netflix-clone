@@ -1,4 +1,4 @@
-.cardWrapper{
+/* .cardWrapper{
     position: relative;
     width: 290px;
     height: 198px;
@@ -6,6 +6,18 @@
     transition: transform 0.3s ease;
     overflow: visible;
     z-index:1;
+} */
+
+
+
+.cardWrapper {
+  position: relative;
+  width: 290px;
+  height: 198px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: visible;
+  z-index: 1;
 }
 
 .poster{

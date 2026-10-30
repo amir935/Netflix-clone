@@ -6,8 +6,15 @@ import { GoCheckCircleFill } from "react-icons/go";
 // import { IoArrowDropdownCircle } from "react-icons/io";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
 
+const IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
 
-
+// a movie/show counts as "recently added" if it was released in the last 30 days
+function isRecentlyAdded(movie, days = 30) {
+  const date = movie?.release_date || movie?.first_air_date;
+  if (!date) return false;
+  const diffDays = (Date.now() - new Date(date).getTime()) / (1000 * 60 * 60 * 24);
+  return diffDays >= 0 && diffDays <= days;
+}
 
 function MovieCard({ movie }) {
   console.log(movie);
